@@ -47,31 +47,3 @@ int main()
     glfwTerminate();
     return 0;
 }
-
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-    glViewport(0, 0, width, height);
-}
-
-void processInput(GLFWwindow* window)
-{
-    static int keys[] = {
-		GLFW_KEY_ESCAPE,
-    };
-    for (const auto& key : keys)
-    {
-		int key_status = glfwGetKey(window, key);
-        if (GLFW_PRESS != key_status)
-        {
-            continue;
-        }
-        switch (key)
-        {
-        case GLFW_KEY_ESCAPE:
-        {
-			glfwSetWindowShouldClose(window, true);
-        }
-        break;
-        }
-    }
-}
